@@ -40,10 +40,6 @@
             border-radius: 5px;
         }
 
-        ::-webkit-scrollbar-thumb:hover {
-            background: linear-gradient(to bottom, #d4b090, #9b835f);
-        }
-
         header {
             position: fixed;
             top: 0;
@@ -52,20 +48,20 @@
             background: rgba(250, 250, 248, 0.99);
             backdrop-filter: blur(30px);
             border-bottom: 1px solid rgba(196, 160, 128, 0.2);
-            padding: 1.5rem 0;
+            padding: 1rem 0;
         }
 
         nav {
             max-width: 100%;
             margin: 0 auto;
-            padding: 0 clamp(1.5rem, 5vw, 3rem);
+            padding: 0 clamp(1rem, 5vw, 3rem);
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
         .logo {
-            font-size: clamp(1.4rem, 4vw, 2.2rem);
+            font-size: clamp(1.2rem, 4vw, 2.2rem);
             font-family: 'Cormorant Garamond', serif;
             font-weight: 600;
             letter-spacing: 4px;
@@ -76,13 +72,13 @@
         nav ul {
             display: flex;
             list-style: none;
-            gap: clamp(2rem, 5vw, 4rem);
+            gap: clamp(1rem, 3vw, 4rem);
         }
 
         nav a {
             color: #2a2a2a;
             text-decoration: none;
-            font-size: clamp(0.75rem, 2vw, 0.9rem);
+            font-size: clamp(0.7rem, 2vw, 0.9rem);
             letter-spacing: 2px;
             transition: all 0.4s ease;
             position: relative;
@@ -90,99 +86,50 @@
             text-transform: uppercase;
         }
 
-        nav a::before {
-            content: '';
-            position: absolute;
-            bottom: -8px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: linear-gradient(to right, #c4a080, #8b7355);
-            transition: width 0.4s ease;
-        }
-
-        nav a:hover::before {
-            width: 100%;
-        }
-
-        nav a:hover {
-            color: #8b7355;
-        }
-
         .hero {
             min-height: 100vh;
-            background: linear-gradient(rgba(250, 250, 248, 0.6), rgba(250, 250, 248, 0.6)), url('img/hero-bg.png');
+            background: linear-gradient(rgba(250, 250, 248, 0.5), rgba(250, 250, 248, 0.5)), url('img/hero-bg.png');
             background-size: cover;
             background-position: center top;
             display: flex;
             align-items: center;
             justify-content: center;
-            padding-top: 120px;
-            padding-bottom: 60px;
+            padding-top: 80px;
+            padding-bottom: 40px;
             position: relative;
             overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: -20%;
-            right: -15%;
-            width: 600px;
-            height: 600px;
-            background: radial-gradient(circle, rgba(196, 160, 128, 0.05) 0%, transparent 70%);
-            border-radius: 50%;
-            filter: blur(60px);
-            animation: float 20s ease-in-out infinite;
-        }
-
-        .hero::after {
-            content: '';
-            position: absolute;
-            bottom: -15%;
-            left: -10%;
-            width: 500px;
-            height: 500px;
-            background: radial-gradient(circle, rgba(196, 160, 128, 0.03) 0%, transparent 70%);
-            border-radius: 50%;
-            filter: blur(50px);
-            animation: float 25s ease-in-out infinite reverse;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translate(0, 0); }
-            50% { transform: translate(20px, -20px); }
         }
 
         .hero-content {
             max-width: 100%;
             text-align: center;
-            padding: clamp(2rem, 5vw, 4rem);
+            padding: clamp(1rem, 5vw, 4rem);
             z-index: 2;
         }
 
         h1 {
-            font-size: clamp(2.5rem, 8vw, 6rem);
+            font-size: clamp(2.2rem, 8vw, 6rem);
             font-family: 'Cormorant Garamond', serif;
             font-weight: 400;
             letter-spacing: 2px;
             margin-bottom: 1rem;
             line-height: 1.1;
             color: #1a1a1a;
+            text-shadow: 0 2px 10px rgba(255, 255, 255, 0.8);
         }
 
         .tagline {
-            font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+            font-size: clamp(0.8rem, 2.5vw, 1.1rem);
             letter-spacing: 3px;
-            margin-bottom: 3rem;
-            font-weight: 300;
-            color: #666;
+            margin-bottom: 2.5rem;
+            font-weight: 400;
+            color: #333;
             text-transform: uppercase;
         }
 
         .cta-button {
             display: inline-block;
-            padding: clamp(1rem, 2vw, 1.3rem) clamp(2rem, 5vw, 3.5rem);
+            padding: clamp(0.9rem, 2vw, 1.3rem) clamp(1.5rem, 5vw, 3.5rem);
             background: linear-gradient(135deg, #c4a080 0%, #8b7355 100%);
             color: #fafaf8;
             text-decoration: none;
@@ -191,46 +138,31 @@
             transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
             border: 2px solid #c4a080;
             text-transform: uppercase;
-            font-size: clamp(0.75rem, 2vw, 0.85rem);
+            font-size: clamp(0.7rem, 2vw, 0.85rem);
             cursor: pointer;
-            box-shadow: 0 10px 30px rgba(196, 160, 128, 0.15);
-        }
-
-        .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 20px 50px rgba(196, 160, 128, 0.25);
-            background: linear-gradient(135deg, #d4b090 0%, #9b835f 100%);
+            box-shadow: 0 10px 30px rgba(196, 160, 128, 0.2);
         }
 
         .section {
-            padding: clamp(4rem, 10vw, 8rem) clamp(1.5rem, 5vw, 3rem);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 1px;
-            background: linear-gradient(to right, transparent, rgba(196, 160, 128, 0.2), transparent);
+            padding: clamp(3rem, 8vw, 6rem) 0;
+            width: 100%;
         }
 
         .container {
+            width: 100%;
             max-width: 100%;
             margin: 0 auto;
-            padding: 0 clamp(1rem, 3vw, 2rem);
+            padding: 0 clamp(0.5rem, 2vw, 2rem);
         }
 
         .section-header {
-            margin-bottom: 4rem;
-            text-align: left;
+            margin-bottom: 3rem;
+            text-align: center;
+            padding: 0 1.5rem;
         }
 
         .section-title {
-            font-size: clamp(2rem, 6vw, 3.5rem);
+            font-size: clamp(1.8rem, 6vw, 3.5rem);
             font-family: 'Cormorant Garamond', serif;
             font-weight: 400;
             letter-spacing: 2px;
@@ -238,123 +170,85 @@
             margin-bottom: 1rem;
         }
 
-        .section-subtitle {
-            font-size: clamp(0.85rem, 2vw, 0.95rem);
-            color: #888;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            font-weight: 400;
-            max-width: 400px;
-        }
-
         .gallery {
-            display: grid;
-            gap: clamp(1.5rem, 3vw, 2rem);
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
             width: 100%;
         }
 
-        @media (min-width: 1024px) {
-            .gallery {
-                grid-template-columns: repeat(3, 1fr);
-            }
-        }
-
-        @media (min-width: 1400px) {
-            .gallery {
-                grid-template-columns: repeat(4, 1fr);
-            }
-        }
-
         .gallery-item {
-            position: relative;
-            aspect-ratio: 1;
-            overflow: hidden;
-            background: #f5f5f3;
-            cursor: pointer;
-            border: 1px solid rgba(42, 42, 42, 0.08);
-            transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            width: 100%;
+            background: #fff;
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
-            padding: clamp(1rem, 2vw, 1.5rem);
-            min-height: 250px;
-        }
-
-        .gallery-item:hover {
-            border-color: rgba(196, 160, 128, 0.4);
-            box-shadow: 0 25px 60px rgba(196, 160, 128, 0.15);
-            transform: translateY(-8px);
+            overflow: hidden;
+            transition: all 0.5s ease;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+            padding-bottom: 2rem;
         }
 
         .gallery-image {
             width: 100%;
-            height: 100%;
-            object-fit: contain;
-            transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94), filter 0.6s ease;
+            max-width: 100%;
+            height: auto;
             display: block;
-        }
-
-        .gallery-item:hover .gallery-image {
-            transform: scale(1.08);
-            filter: brightness(1.1) contrast(1.05);
+            object-fit: contain;
+            image-rendering: -webkit-optimize-contrast;
         }
 
         .gallery-label {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: linear-gradient(180deg, transparent, rgba(26, 26, 26, 0.95));
-            padding: clamp(1.5rem, 3vw, 2rem) clamp(1rem, 2vw, 1.5rem) clamp(1rem, 2vw, 1.5rem);
-            opacity: 0;
-            transition: opacity 0.4s ease;
-        }
-
-        .gallery-item:hover .gallery-label {
-            opacity: 1;
+            margin-top: 1.5rem;
+            text-align: center;
+            padding: 0 1rem;
         }
 
         .gallery-title {
-            font-size: clamp(1rem, 2vw, 1.2rem);
+            font-size: clamp(1rem, 2vw, 1.4rem);
             font-family: 'Cormorant Garamond', serif;
-            color: #fafaf8;
+            color: #1a1a1a;
             letter-spacing: 1px;
             font-weight: 500;
+            text-transform: uppercase;
         }
 
         .about {
             background: #1a1a1a;
             color: #fafaf8;
-            padding: clamp(4rem, 10vw, 8rem) clamp(1.5rem, 5vw, 3rem);
-            border-top: 1px solid rgba(196, 160, 128, 0.2);
-        }
-
-        .about .section-title {
-            color: #fafaf8;
-        }
-
-        .about .section-subtitle {
-            color: #aaa;
+            padding: clamp(4rem, 10vw, 8rem) clamp(1rem, 5vw, 3rem);
         }
 
         .about-content {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: clamp(2rem, 5vw, 6rem);
-            align-items: start;
-            max-width: 100%;
+            grid-template-columns: 1fr;
+            gap: 3rem;
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
-        @media (max-width: 768px) {
+        @media (min-width: 768px) {
             .about-content {
-                grid-template-columns: 1fr;
-                gap: 3rem;
+                grid-template-columns: 1fr 1fr;
+            }
+            .gallery {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 2rem;
             }
         }
 
-        .about-text {
-            max-width: 100%;
+        @media (min-width: 1200px) {
+            .gallery {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .about-text h2 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-family: 'Cormorant Garamond', serif;
+            margin-bottom: 1.5rem;
         }
 
         .about-text p {
@@ -362,187 +256,64 @@
             line-height: 1.8;
             margin-bottom: 2rem;
             color: #ddd;
-            font-weight: 300;
         }
 
         .services {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: clamp(1.5rem, 3vw, 2rem);
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
         }
 
         .service {
-            padding: clamp(1.5rem, 3vw, 2rem);
-            border: 1px solid rgba(250, 250, 248, 0.15);
-            background: rgba(250, 250, 248, 0.05);
-            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-        }
-
-        .service:hover {
-            border-color: rgba(196, 160, 128, 0.4);
-            background: rgba(196, 160, 128, 0.08);
-            transform: translateY(-4px);
+            padding: 1.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.05);
         }
 
         .service-title {
-            font-size: clamp(1rem, 2vw, 1.1rem);
+            font-size: 1.1rem;
             font-family: 'Cormorant Garamond', serif;
             color: #fafaf8;
-            margin-bottom: 0.8rem;
-            letter-spacing: 1px;
-            font-weight: 500;
-        }
-
-        .service p {
-            font-size: clamp(0.85rem, 2vw, 0.95rem);
-            color: #bbb;
-            font-weight: 300;
-            line-height: 1.6;
+            margin-bottom: 0.5rem;
         }
 
         footer {
             background: #fafaf8;
-            border-top: 1px solid rgba(42, 42, 42, 0.1);
-            padding: clamp(3rem, 8vw, 6rem) clamp(1.5rem, 5vw, 3rem);
-        }
-
-        .footer-content {
-            max-width: 100%;
-            margin: 0 auto;
+            padding: 4rem 1.5rem;
             text-align: center;
+            border-top: 1px solid rgba(0,0,0,0.05);
         }
 
         .footer-title {
-            font-size: clamp(1.8rem, 5vw, 2.5rem);
+            font-size: clamp(1.5rem, 5vw, 2.5rem);
             font-family: 'Cormorant Garamond', serif;
-            color: #1a1a1a;
             margin-bottom: 2rem;
-            font-weight: 400;
-            letter-spacing: 2px;
-        }
-
-        .contact {
-            margin: 2rem 0;
         }
 
         .contact p {
-            font-size: clamp(0.9rem, 2vw, 1rem);
-            color: #555;
-            margin: 0.8rem 0;
-            letter-spacing: 0.5px;
+            margin: 0.5rem 0;
+            font-size: 0.95rem;
         }
 
         .whatsapp-btn {
             display: inline-block;
-            margin-top: 2.5rem;
-            padding: clamp(1rem, 2vw, 1.2rem) clamp(2rem, 4vw, 3rem);
+            margin-top: 2rem;
+            padding: 1rem 2.5rem;
             background: linear-gradient(135deg, #c4a080 0%, #8b7355 100%);
             color: #fafaf8;
             text-decoration: none;
-            letter-spacing: 2px;
             font-weight: 600;
-            transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
-            border: 2px solid #c4a080;
             text-transform: uppercase;
-            font-size: clamp(0.75rem, 2vw, 0.85rem);
-            box-shadow: 0 10px 30px rgba(196, 160, 128, 0.15);
-        }
-
-        .whatsapp-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 20px 50px rgba(196, 160, 128, 0.25);
-            background: linear-gradient(135deg, #d4b090 0%, #9b835f 100%);
-        }
-
-        .footer-bottom {
-            margin-top: 3rem;
-            padding-top: 2rem;
-            border-top: 1px solid rgba(42, 42, 42, 0.1);
-            font-size: clamp(0.75rem, 2vw, 0.85rem);
-            color: #888;
-            letter-spacing: 1px;
-            font-weight: 300;
-        }
-
-        @media (max-width: 1024px) {
-            .gallery {
-                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            }
-
-            .section {
-                padding: 4rem clamp(1.5rem, 3vw, 2rem);
-            }
-        }
-
-        @media (max-width: 768px) {
-            header {
-                padding: 1rem 0;
-            }
-
-            nav {
-                padding: 0 1.5rem;
-            }
-
-            nav ul {
-                gap: 1.5rem;
-            }
-
-            .hero {
-                padding-top: 80px;
-                padding-bottom: 40px;
-            }
-
-            .hero-content {
-                padding: 2rem 1.5rem;
-            }
-
-            .section {
-                padding: 3rem 1.5rem;
-            }
-
-            .section-header {
-                margin-bottom: 2rem;
-            }
-
-            .gallery {
-                grid-template-columns: 1fr;
-                gap: 1rem;
-            }
-
-            .gallery-item {
-                min-height: 250px;
-            }
-
-            .about-content {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-
-            .services {
-                grid-template-columns: 1fr;
-                gap: 1.5rem;
-            }
-
-            .footer-content {
-                text-align: center;
-            }
+            font-size: 0.8rem;
+            letter-spacing: 2px;
         }
 
         @media (max-width: 480px) {
-            nav ul {
-                gap: 1rem;
+            .container {
+                padding: 0;
             }
-
-            .section {
-                padding: 2rem 1rem;
-            }
-
             .gallery-item {
-                min-height: 200px;
-            }
-
-            .footer-bottom {
-                font-size: 0.75rem;
+                border-bottom: 8px solid #f0f0f0;
             }
         }
     </style>
@@ -570,81 +341,97 @@
     <section id="trabalhos" class="section">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Portfólio</h2>
-                <p class="section-subtitle">Seleção de projetos que refletem pesquisa visual, inovação criativa e execução impecável</p>
+                <h2 class="section-title">Portfólio Completo</h2>
+                <p class="section-subtitle">Alta Resolução | Qualidade Premium</p>
             </div>
             <div class="gallery">
                 <div class="gallery-item">
-                    <img src="img/70da473c-1b17-4e80-8a6b-6d9524937974.PNG" alt="Simples Fresco" class="gallery-image">
-                    <div class="gallery-label">
-                        <div class="gallery-title">Simples Fresco</div>
-                    </div>
-                </div>
-                <div class="gallery-item">
                     <img src="img/Designs.PNG" alt="Designs Personalizados" class="gallery-image">
-                    <div class="gallery-label">
-                        <div class="gallery-title">Designs Personalizados</div>
-                    </div>
+                    <div class="gallery-label"><div class="gallery-title">Designs Personalizados</div></div>
                 </div>
                 <div class="gallery-item">
                     <img src="img/Maximalismo.PNG" alt="Maximalismo" class="gallery-image">
-                    <div class="gallery-label">
-                        <div class="gallery-title">Maximalismo</div>
-                    </div>
+                    <div class="gallery-label"><div class="gallery-title">Maximalismo</div></div>
+                </div>
+                <div class="gallery-item">
+                    <img src="img/70da473c-1b17-4e80-8a6b-6d9524937974.PNG" alt="Simples Fresco" class="gallery-image">
+                    <div class="gallery-label"><div class="gallery-title">Simples Fresco</div></div>
                 </div>
                 <div class="gallery-item">
                     <img src="img/GOLDEN HOUR.PNG" alt="Golden Hour" class="gallery-image">
-                    <div class="gallery-label">
-                        <div class="gallery-title">Golden Hour</div>
-                    </div>
+                    <div class="gallery-label"><div class="gallery-title">Golden Hour</div></div>
                 </div>
                 <div class="gallery-item">
-                    <img src="img/Blue Illustrative Technology Innovation Poster (Post para Instagram (45)).PNG" alt="Word Tecnologia" class="gallery-image">
-                    <div class="gallery-label">
-                        <div class="gallery-title">Word Tecnologia</div>
-                    </div>
+                    <img src="img/Blue Illustrative Technology Innovation Poster (Post para Instagram (45)).PNG" alt="Tecnologia" class="gallery-image">
+                    <div class="gallery-label"><div class="gallery-title">Tecnologia</div></div>
                 </div>
                 <div class="gallery-item">
                     <img src="img/C263945D-DAEC-4F0D-92BB-EAF6C45A220C.PNG" alt="Projeto Premium" class="gallery-image">
-                    <div class="gallery-label">
-                        <div class="gallery-title">Projeto Premium</div>
-                    </div>
+                    <div class="gallery-label"><div class="gallery-title">Projeto Premium</div></div>
                 </div>
                 <div class="gallery-item">
                     <img src="img/68C04A46-1314-4CD6-A88F-2A978EE240C5.PNG" alt="Criação Exclusiva" class="gallery-image">
-                    <div class="gallery-label">
-                        <div class="gallery-title">Criação Exclusiva</div>
-                    </div>
+                    <div class="gallery-label"><div class="gallery-title">Criação Exclusiva</div></div>
                 </div>
                 <div class="gallery-item">
                     <img src="img/b2b53c50-99a6-4847-b830-575ade29edfb.PNG" alt="Arte Visual" class="gallery-image">
-                    <div class="gallery-label">
-                        <div class="gallery-title">Arte Visual</div>
-                    </div>
+                    <div class="gallery-label"><div class="gallery-title">Arte Visual</div></div>
                 </div>
                 <div class="gallery-item">
                     <img src="img/79d095f8-616d-49d7-b65d-cc1f18a29cc9.PNG" alt="Design Inovador" class="gallery-image">
-                    <div class="gallery-label">
-                        <div class="gallery-title">Design Inovador</div>
-                    </div>
+                    <div class="gallery-label"><div class="gallery-title">Design Inovador</div></div>
                 </div>
                 <div class="gallery-item">
                     <img src="img/bee6018d-8c8f-4474-bf8e-9663c8b05217.PNG" alt="Composição Moderna" class="gallery-image">
-                    <div class="gallery-label">
-                        <div class="gallery-title">Composição Moderna</div>
-                    </div>
+                    <div class="gallery-label"><div class="gallery-title">Composição Moderna</div></div>
                 </div>
                 <div class="gallery-item">
                     <img src="img/8ae61bd2-c1fd-4fc3-8dbf-7ebc7dfe886c.PNG" alt="Trabalho Premium" class="gallery-image">
-                    <div class="gallery-label">
-                        <div class="gallery-title">Trabalho Premium</div>
-                    </div>
+                    <div class="gallery-label"><div class="gallery-title">Trabalho Premium</div></div>
                 </div>
                 <div class="gallery-item">
                     <img src="img/5aba3c77-b49e-463c-a5cb-ff43bb6a9a1c.PNG" alt="Design Sofisticado" class="gallery-image">
-                    <div class="gallery-label">
-                        <div class="gallery-title">Design Sofisticado</div>
-                    </div>
+                    <div class="gallery-label"><div class="gallery-title">Design Sofisticado</div></div>
+                </div>
+                <div class="gallery-item">
+                    <img src="img/Designs 2.PNG" alt="Portfolio Design" class="gallery-image">
+                    <div class="gallery-label"><div class="gallery-title">Portfolio Design</div></div>
+                </div>
+                <div class="gallery-item">
+                    <img src="img/Feliz.PNG" alt="Campanha Feliz" class="gallery-image">
+                    <div class="gallery-label"><div class="gallery-title">Campanha Feliz</div></div>
+                </div>
+                <div class="gallery-item">
+                    <img src="img/Personalizados.PNG" alt="Personalizados" class="gallery-image">
+                    <div class="gallery-label"><div class="gallery-title">Personalizados</div></div>
+                </div>
+                <div class="gallery-item">
+                    <img src="img/IMG_3205.JPG" alt="Ensaio Visual" class="gallery-image">
+                    <div class="gallery-label"><div class="gallery-title">Ensaio Visual</div></div>
+                </div>
+                <div class="gallery-item">
+                    <img src="img/IMG_3206.JPG" alt="Produção Criativa" class="gallery-image">
+                    <div class="gallery-label"><div class="gallery-title">Produção Criativa</div></div>
+                </div>
+                <div class="gallery-item">
+                    <img src="img/arte_neutra_dentistas_24hs.jpg" alt="Design Comercial" class="gallery-image">
+                    <div class="gallery-label"><div class="gallery-title">Design Comercial</div></div>
+                </div>
+                <div class="gallery-item">
+                    <img src="img/Edições personalizadas.jpg" alt="Edições" class="gallery-image">
+                    <div class="gallery-label"><div class="gallery-title">Edições</div></div>
+                </div>
+                <div class="gallery-item">
+                    <img src="img/Crio ensaios fotográficos e edições personalizadas para você !.jpg" alt="Ensaios" class="gallery-image">
+                    <div class="gallery-label"><div class="gallery-title">Ensaios</div></div>
+                </div>
+                <div class="gallery-item">
+                    <img src="img/Black and Blue Futuristic Modern Technology Pitch Deck Presentation (Post para Instagram (45)).zip - Português (Brasil).PNG" alt="Pitch Deck" class="gallery-image">
+                    <div class="gallery-label"><div class="gallery-title">Pitch Deck</div></div>
+                </div>
+                <div class="gallery-item">
+                    <img src="img/Blue Futuristic and Modern Artificial Intelligence Marketing Webinar Instagram Post.zip - Português (Brasil).PNG" alt="AI Marketing" class="gallery-image">
+                    <div class="gallery-label"><div class="gallery-title">AI Marketing</div></div>
                 </div>
             </div>
         </div>
@@ -654,26 +441,22 @@
         <div class="about-content">
             <div class="about-text">
                 <h2 class="section-title">Sobre</h2>
-                <p>Sou uma designer visual apaixonada por criar experiências visuais que não apenas impressionam, mas também vendem. Cada projeto é uma oportunidade de contar uma história através de cores, tipografia e composição refinada.</p>
-                <p>Meu trabalho combina sofisticação, inovação e execução impecável para entregar designs que elevam sua marca e geram resultados reais.</p>
+                <p>Sou uma designer visual apaixonada por criar experiências que não apenas impressionam, mas também vendem. Cada projeto é uma oportunidade de contar uma história através de cores, tipografia e composição refinada.</p>
+                <p>Meu trabalho combina sofisticação, inovação e execução impecável para elevar sua marca ao próximo nível.</p>
             </div>
             <div>
                 <div class="services">
                     <div class="service">
                         <div class="service-title">Design Personalizado</div>
-                        <p>Criações únicas e exclusivas adaptadas ao seu negócio e público-alvo com máxima qualidade.</p>
+                        <p>Criações únicas adaptadas ao seu negócio com máxima qualidade.</p>
                     </div>
                     <div class="service">
                         <div class="service-title">Identidade Visual</div>
-                        <p>Desenvolvimento completo de marca, logotipo e direcionamento visual profissional.</p>
+                        <p>Desenvolvimento completo de marca e logotipo profissional.</p>
                     </div>
                     <div class="service">
                         <div class="service-title">Conteúdo Visual</div>
-                        <p>Produção de materiais visuais em alta resolução para redes sociais e marketing.</p>
-                    </div>
-                    <div class="service">
-                        <div class="service-title">Edições Premium</div>
-                        <p>Edições fotográficas profissionais e retoque de alta qualidade com precisão.</p>
+                        <p>Produção de materiais em alta resolução para marketing.</p>
                     </div>
                 </div>
             </div>
@@ -688,9 +471,9 @@
                 <p><strong>Telefone:</strong> +55 34 988086470</p>
                 <p><strong>Localização:</strong> Araxá - Minas Gerais</p>
             </div>
-            <a href="https://wa.me/5534988086470" class="whatsapp-btn">Fale Conosco no WhatsApp</a>
-            <div class="footer-bottom">
-                © 2024 Júlia Assis. Todos os direitos reservados. | Design Premium
+            <a href="https://wa.me/5534988086470" class="whatsapp-btn">WhatsApp</a>
+            <div class="footer-bottom" style="margin-top: 2rem;">
+                © 2024 Júlia Assis. Todos os direitos reservados.
             </div>
         </div>
     </footer>
