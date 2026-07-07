@@ -1,9 +1,11 @@
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Júlia Assis - Trabalhos</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300&family=Montserrat:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
+    <meta name="description" content="Júlia Assis - Portfólio Minimalista Premium">
+    <title>Júlia Assis - Galeria Minimalista Premium</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300&family=Montserrat:wght@100;200;300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -13,16 +15,20 @@
 
         html {
             scroll-behavior: smooth;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
 
         body {
             font-family: 'Montserrat', sans-serif;
             background: #fafaf8;
             color: #2a2a2a;
+            line-height: 1.6;
+            overflow-x: hidden;
         }
 
         ::-webkit-scrollbar {
-            width: 8px;
+            width: 10px;
         }
 
         ::-webkit-scrollbar-track {
@@ -30,8 +36,12 @@
         }
 
         ::-webkit-scrollbar-thumb {
-            background: #2a2a2a;
-            border-radius: 4px;
+            background: linear-gradient(to bottom, #c4a080, #8b7355);
+            border-radius: 5px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(to bottom, #d4b090, #9b835f);
         }
 
         header {
@@ -39,48 +49,45 @@
             top: 0;
             width: 100%;
             z-index: 1000;
-            background: rgba(250, 250, 248, 0.98);
+            background: rgba(250, 250, 248, 0.99);
             backdrop-filter: blur(30px);
-            border-bottom: 1px solid rgba(42, 42, 42, 0.1);
-            padding: 2rem 0;
+            border-bottom: 1px solid rgba(196, 160, 128, 0.2);
+            padding: 1.5rem 0;
         }
 
         nav {
-            max-width: 1800px;
+            max-width: 100%;
             margin: 0 auto;
-            padding: 0 3rem;
+            padding: 0 clamp(1.5rem, 5vw, 3rem);
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
         .logo {
-            font-size: 2.2rem;
+            font-size: clamp(1.4rem, 4vw, 2.2rem);
             font-family: 'Cormorant Garamond', serif;
-            font-weight: 400;
+            font-weight: 600;
             letter-spacing: 4px;
             color: #1a1a1a;
+            text-transform: uppercase;
         }
 
         nav ul {
             display: flex;
             list-style: none;
-            gap: 4rem;
+            gap: clamp(2rem, 5vw, 4rem);
         }
 
         nav a {
             color: #2a2a2a;
             text-decoration: none;
-            font-size: 0.9rem;
+            font-size: clamp(0.75rem, 2vw, 0.9rem);
             letter-spacing: 2px;
-            transition: opacity 0.4s ease;
+            transition: all 0.4s ease;
             position: relative;
-            font-weight: 400;
+            font-weight: 500;
             text-transform: uppercase;
-        }
-
-        nav a:hover {
-            opacity: 0.5;
         }
 
         nav a::before {
@@ -89,8 +96,8 @@
             bottom: -8px;
             left: 0;
             width: 0;
-            height: 1px;
-            background: #1a1a1a;
+            height: 2px;
+            background: linear-gradient(to right, #c4a080, #8b7355);
             transition: width 0.4s ease;
         }
 
@@ -98,97 +105,163 @@
             width: 100%;
         }
 
+        nav a:hover {
+            color: #8b7355;
+        }
+
         .hero {
             min-height: 100vh;
-            background: #fafaf8;
+            background: linear-gradient(135deg, #fafaf8 0%, #f5f5f3 50%, #f0f0ee 100%);
             display: flex;
             align-items: center;
             justify-content: center;
-            padding-top: 100px;
-            padding-bottom: 50px;
+            padding-top: 120px;
+            padding-bottom: 60px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -20%;
+            right: -15%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(196, 160, 128, 0.05) 0%, transparent 70%);
+            border-radius: 50%;
+            filter: blur(60px);
+            animation: float 20s ease-in-out infinite;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -15%;
+            left: -10%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(196, 160, 128, 0.03) 0%, transparent 70%);
+            border-radius: 50%;
+            filter: blur(50px);
+            animation: float 25s ease-in-out infinite reverse;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0); }
+            50% { transform: translate(20px, -20px); }
         }
 
         .hero-content {
-            max-width: 1000px;
+            max-width: 100%;
             text-align: center;
-            padding: 2rem;
+            padding: clamp(2rem, 5vw, 4rem);
+            z-index: 2;
         }
 
         h1 {
-            font-size: 6rem;
+            font-size: clamp(2.5rem, 8vw, 6rem);
             font-family: 'Cormorant Garamond', serif;
-            font-weight: 300;
+            font-weight: 400;
             letter-spacing: 2px;
             margin-bottom: 1rem;
-            line-height: 1;
+            line-height: 1.1;
             color: #1a1a1a;
         }
 
         .tagline {
-            font-size: 1.1rem;
+            font-size: clamp(0.9rem, 2.5vw, 1.1rem);
             letter-spacing: 3px;
             margin-bottom: 3rem;
             font-weight: 300;
-            color: #555;
+            color: #666;
             text-transform: uppercase;
         }
 
         .cta-button {
             display: inline-block;
-            padding: 1.3rem 3.5rem;
-            background: #1a1a1a;
+            padding: clamp(1rem, 2vw, 1.3rem) clamp(2rem, 5vw, 3.5rem);
+            background: linear-gradient(135deg, #c4a080 0%, #8b7355 100%);
             color: #fafaf8;
             text-decoration: none;
             letter-spacing: 2px;
-            font-weight: 500;
-            transition: all 0.5s ease;
-            border: 2px solid #1a1a1a;
+            font-weight: 600;
+            transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+            border: 2px solid #c4a080;
             text-transform: uppercase;
-            font-size: 0.85rem;
+            font-size: clamp(0.75rem, 2vw, 0.85rem);
             cursor: pointer;
+            box-shadow: 0 10px 30px rgba(196, 160, 128, 0.15);
         }
 
         .cta-button:hover {
-            background: transparent;
-            color: #1a1a1a;
-            transform: scale(1.02);
+            transform: translateY(-3px);
+            box-shadow: 0 20px 50px rgba(196, 160, 128, 0.25);
+            background: linear-gradient(135deg, #d4b090 0%, #9b835f 100%);
         }
 
         .section {
-            padding: 8rem 3rem;
+            padding: clamp(4rem, 10vw, 8rem) clamp(1.5rem, 5vw, 3rem);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(to right, transparent, rgba(196, 160, 128, 0.2), transparent);
         }
 
         .container {
-            max-width: 1800px;
+            max-width: 100%;
             margin: 0 auto;
+            padding: 0 clamp(1rem, 3vw, 2rem);
         }
 
         .section-header {
-            margin-bottom: 5rem;
+            margin-bottom: 4rem;
             text-align: left;
         }
 
         .section-title {
-            font-size: 3.5rem;
+            font-size: clamp(2rem, 6vw, 3.5rem);
             font-family: 'Cormorant Garamond', serif;
-            font-weight: 300;
+            font-weight: 400;
             letter-spacing: 2px;
             color: #1a1a1a;
             margin-bottom: 1rem;
         }
 
         .section-subtitle {
-            font-size: 0.95rem;
+            font-size: clamp(0.85rem, 2vw, 0.95rem);
             color: #888;
             letter-spacing: 2px;
             text-transform: uppercase;
-            font-weight: 300;
+            font-weight: 400;
+            max-width: 400px;
         }
 
         .gallery {
             display: grid;
-            gap: 2rem;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: clamp(1.5rem, 3vw, 2rem);
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            width: 100%;
+        }
+
+        @media (min-width: 1024px) {
+            .gallery {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (min-width: 1400px) {
+            .gallery {
+                grid-template-columns: repeat(4, 1fr);
+            }
         }
 
         .gallery-item {
@@ -202,24 +275,27 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 1.5rem;
+            padding: clamp(1rem, 2vw, 1.5rem);
+            min-height: 250px;
         }
 
         .gallery-item:hover {
-            border-color: rgba(42, 42, 42, 0.3);
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
+            border-color: rgba(196, 160, 128, 0.4);
+            box-shadow: 0 25px 60px rgba(196, 160, 128, 0.15);
+            transform: translateY(-8px);
         }
 
         .gallery-image {
             width: 100%;
             height: 100%;
-            object-fit: contain;
-            transition: transform 0.6s ease, filter 0.6s ease;
+            object-fit: cover;
+            transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94), filter 0.6s ease;
+            display: block;
         }
 
         .gallery-item:hover .gallery-image {
-            transform: scale(1.05);
-            filter: brightness(1.08);
+            transform: scale(1.08);
+            filter: brightness(1.1) contrast(1.05);
         }
 
         .gallery-label {
@@ -227,8 +303,8 @@
             bottom: 0;
             left: 0;
             right: 0;
-            background: linear-gradient(180deg, transparent, rgba(26, 26, 26, 0.9));
-            padding: 2rem 1.5rem 1.5rem;
+            background: linear-gradient(180deg, transparent, rgba(26, 26, 26, 0.95));
+            padding: clamp(1.5rem, 3vw, 2rem) clamp(1rem, 2vw, 1.5rem) clamp(1rem, 2vw, 1.5rem);
             opacity: 0;
             transition: opacity 0.4s ease;
         }
@@ -238,17 +314,18 @@
         }
 
         .gallery-title {
-            font-size: 1.2rem;
+            font-size: clamp(1rem, 2vw, 1.2rem);
             font-family: 'Cormorant Garamond', serif;
             color: #fafaf8;
             letter-spacing: 1px;
-            font-weight: 400;
+            font-weight: 500;
         }
 
         .about {
             background: #1a1a1a;
             color: #fafaf8;
-            padding: 8rem 3rem;
+            padding: clamp(4rem, 10vw, 8rem) clamp(1.5rem, 5vw, 3rem);
+            border-top: 1px solid rgba(196, 160, 128, 0.2);
         }
 
         .about .section-title {
@@ -262,16 +339,24 @@
         .about-content {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 6rem;
+            gap: clamp(2rem, 5vw, 6rem);
             align-items: start;
+            max-width: 100%;
+        }
+
+        @media (max-width: 768px) {
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
         }
 
         .about-text {
-            max-width: 550px;
+            max-width: 100%;
         }
 
         .about-text p {
-            font-size: 1rem;
+            font-size: clamp(0.9rem, 2vw, 1rem);
             line-height: 1.8;
             margin-bottom: 2rem;
             color: #ddd;
@@ -280,55 +365,57 @@
 
         .services {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: clamp(1.5rem, 3vw, 2rem);
         }
 
         .service {
-            padding: 2rem;
-            border: 1px solid rgba(250, 250, 248, 0.2);
+            padding: clamp(1.5rem, 3vw, 2rem);
+            border: 1px solid rgba(250, 250, 248, 0.15);
             background: rgba(250, 250, 248, 0.05);
-            transition: all 0.4s ease;
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
         }
 
         .service:hover {
-            border-color: rgba(250, 250, 248, 0.4);
-            background: rgba(250, 250, 248, 0.1);
+            border-color: rgba(196, 160, 128, 0.4);
+            background: rgba(196, 160, 128, 0.08);
+            transform: translateY(-4px);
         }
 
         .service-title {
-            font-size: 1.1rem;
+            font-size: clamp(1rem, 2vw, 1.1rem);
             font-family: 'Cormorant Garamond', serif;
             color: #fafaf8;
             margin-bottom: 0.8rem;
             letter-spacing: 1px;
-            font-weight: 400;
+            font-weight: 500;
         }
 
         .service p {
-            font-size: 0.95rem;
+            font-size: clamp(0.85rem, 2vw, 0.95rem);
             color: #bbb;
             font-weight: 300;
+            line-height: 1.6;
         }
 
         footer {
             background: #fafaf8;
             border-top: 1px solid rgba(42, 42, 42, 0.1);
-            padding: 6rem 3rem;
+            padding: clamp(3rem, 8vw, 6rem) clamp(1.5rem, 5vw, 3rem);
         }
 
         .footer-content {
-            max-width: 1800px;
+            max-width: 100%;
             margin: 0 auto;
             text-align: center;
         }
 
         .footer-title {
-            font-size: 2.5rem;
+            font-size: clamp(1.8rem, 5vw, 2.5rem);
             font-family: 'Cormorant Garamond', serif;
             color: #1a1a1a;
             margin-bottom: 2rem;
-            font-weight: 300;
+            font-weight: 400;
             letter-spacing: 2px;
         }
 
@@ -337,7 +424,7 @@
         }
 
         .contact p {
-            font-size: 1rem;
+            font-size: clamp(0.9rem, 2vw, 1rem);
             color: #555;
             margin: 0.8rem 0;
             letter-spacing: 0.5px;
@@ -346,50 +433,115 @@
         .whatsapp-btn {
             display: inline-block;
             margin-top: 2.5rem;
-            padding: 1.2rem 3rem;
-            background: #1a1a1a;
+            padding: clamp(1rem, 2vw, 1.2rem) clamp(2rem, 4vw, 3rem);
+            background: linear-gradient(135deg, #c4a080 0%, #8b7355 100%);
             color: #fafaf8;
             text-decoration: none;
             letter-spacing: 2px;
-            font-weight: 500;
-            transition: all 0.4s ease;
-            border: 2px solid #1a1a1a;
+            font-weight: 600;
+            transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+            border: 2px solid #c4a080;
             text-transform: uppercase;
-            font-size: 0.85rem;
+            font-size: clamp(0.75rem, 2vw, 0.85rem);
+            box-shadow: 0 10px 30px rgba(196, 160, 128, 0.15);
         }
 
         .whatsapp-btn:hover {
-            background: transparent;
-            color: #1a1a1a;
-            transform: scale(1.02);
+            transform: translateY(-3px);
+            box-shadow: 0 20px 50px rgba(196, 160, 128, 0.25);
+            background: linear-gradient(135deg, #d4b090 0%, #9b835f 100%);
         }
 
         .footer-bottom {
             margin-top: 3rem;
             padding-top: 2rem;
             border-top: 1px solid rgba(42, 42, 42, 0.1);
-            font-size: 0.85rem;
+            font-size: clamp(0.75rem, 2vw, 0.85rem);
             color: #888;
             letter-spacing: 1px;
+            font-weight: 300;
         }
 
         @media (max-width: 1024px) {
-            h1 { font-size: 4rem; }
-            .section-title { font-size: 2.5rem; }
-            .about-content { grid-template-columns: 1fr; gap: 3rem; }
-            .services { grid-template-columns: 1fr; }
-            .gallery { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
-            nav ul { gap: 2rem; }
+            .gallery {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            }
+
+            .section {
+                padding: 4rem clamp(1.5rem, 3vw, 2rem);
+            }
         }
 
         @media (max-width: 768px) {
-            h1 { font-size: 2.5rem; }
-            .tagline { font-size: 0.9rem; }
-            .section-title { font-size: 1.8rem; }
-            header { padding: 1rem 0; }
-            nav { padding: 0 1.5rem; }
-            .section { padding: 4rem 1.5rem; }
-            .gallery { grid-template-columns: 1fr; }
+            header {
+                padding: 1rem 0;
+            }
+
+            nav {
+                padding: 0 1.5rem;
+            }
+
+            nav ul {
+                gap: 1.5rem;
+            }
+
+            .hero {
+                padding-top: 80px;
+                padding-bottom: 40px;
+            }
+
+            .hero-content {
+                padding: 2rem 1.5rem;
+            }
+
+            .section {
+                padding: 3rem 1.5rem;
+            }
+
+            .section-header {
+                margin-bottom: 2rem;
+            }
+
+            .gallery {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .gallery-item {
+                min-height: 250px;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .services {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .footer-content {
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            nav ul {
+                gap: 1rem;
+            }
+
+            .section {
+                padding: 2rem 1rem;
+            }
+
+            .gallery-item {
+                min-height: 200px;
+            }
+
+            .footer-bottom {
+                font-size: 0.75rem;
+            }
         }
     </style>
 </head>
@@ -407,7 +559,7 @@
 
     <section class="hero">
         <div class="hero-content">
-            <h1>Design e Arte</h1>
+            <h1>Design Minimalista Premium</h1>
             <p class="tagline">Criações que deixam marca</p>
             <a href="#trabalhos" class="cta-button">Ver Trabalhos</a>
         </div>
@@ -417,189 +569,128 @@
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">Portfólio</h2>
-                <p class="section-subtitle">Seleção de projetos recentes</p>
+                <p class="section-subtitle">Seleção de projetos que refletem pesquisa visual, inovação criativa e execução impecável</p>
             </div>
             <div class="gallery">
                 <div class="gallery-item">
-                    <img src="https://picsum.photos/seed/100/800/800" alt="Simples Fresco" class="gallery-image">
+                    <img src="img/70da473c-1b17-4e80-8a6b-6d9524937974.PNG" alt="Simples Fresco" class="gallery-image">
                     <div class="gallery-label">
                         <div class="gallery-title">Simples Fresco</div>
                     </div>
                 </div>
                 <div class="gallery-item">
-                    <img src="https://picsum.photos/seed/101/800/800" alt="Feito com Amor" class="gallery-image">
-                    <div class="gallery-label">
-                        <div class="gallery-title">Feito com Amor</div>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="https://picsum.photos/seed/102/800/800" alt="Sorriso Merece Melhor" class="gallery-image">
-                    <div class="gallery-label">
-                        <div class="gallery-title">Sorriso Merece Melhor</div>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="https://picsum.photos/seed/103/800/800" alt="Lealdade que Inspira" class="gallery-image">
-                    <div class="gallery-label">
-                        <div class="gallery-title">Lealdade que Inspira</div>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="https://picsum.photos/seed/104/800/800" alt="Essência" class="gallery-image">
-                    <div class="gallery-label">
-                        <div class="gallery-title">Essência</div>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="https://picsum.photos/seed/105/800/800" alt="Construo Hoje" class="gallery-image">
-                    <div class="gallery-label">
-                        <div class="gallery-title">Construo Hoje</div>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="https://picsum.photos/seed/106/800/800" alt="Designs Personalizados" class="gallery-image">
+                    <img src="img/Designs.PNG" alt="Designs Personalizados" class="gallery-image">
                     <div class="gallery-label">
                         <div class="gallery-title">Designs Personalizados</div>
                     </div>
                 </div>
                 <div class="gallery-item">
-                    <img src="https://picsum.photos/seed/107/800/800" alt="Word Tecnologia" class="gallery-image">
+                    <img src="img/Maximalismo.PNG" alt="Maximalismo" class="gallery-image">
                     <div class="gallery-label">
-                        <div class="gallery-title">Word Tecnologia</div>
+                        <div class="gallery-title">Maximalismo</div>
                     </div>
                 </div>
                 <div class="gallery-item">
-                    <img src="https://picsum.photos/seed/108/800/800" alt="BC Express" class="gallery-image">
-                    <div class="gallery-label">
-                        <div class="gallery-title">BC Express</div>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="https://picsum.photos/seed/109/800/800" alt="Dentistas 24hs" class="gallery-image">
-                    <div class="gallery-label">
-                        <div class="gallery-title">Dentistas 24hs</div>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="https://picsum.photos/seed/110/800/800" alt="Luxury Mindset" class="gallery-image">
-                    <div class="gallery-label">
-                        <div class="gallery-title">Luxury Mindset</div>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="https://picsum.photos/seed/111/800/800" alt="Design Studio" class="gallery-image">
-                    <div class="gallery-label">
-                        <div class="gallery-title">Design Studio</div>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="https://picsum.photos/seed/112/800/800" alt="Creative Collections" class="gallery-image">
-                    <div class="gallery-label">
-                        <div class="gallery-title">Creative Collections</div>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="https://picsum.photos/seed/113/800/800" alt="Happy Designs" class="gallery-image">
-                    <div class="gallery-label">
-                        <div class="gallery-title">Happy Designs</div>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="https://picsum.photos/seed/114/800/800" alt="Golden Hour" class="gallery-image">
+                    <img src="img/GOLDEN HOUR.PNG" alt="Golden Hour" class="gallery-image">
                     <div class="gallery-label">
                         <div class="gallery-title">Golden Hour</div>
                     </div>
                 </div>
                 <div class="gallery-item">
-                    <img src="https://picsum.photos/seed/115/800/800" alt="Maximalism" class="gallery-image">
+                    <img src="img/Blue Illustrative Technology Innovation Poster (Post para Instagram (45)).PNG" alt="Word Tecnologia" class="gallery-image">
                     <div class="gallery-label">
-                        <div class="gallery-title">Maximalism</div>
+                        <div class="gallery-title">Word Tecnologia</div>
                     </div>
                 </div>
                 <div class="gallery-item">
-                    <img src="https://picsum.photos/seed/116/800/800" alt="Custom Editions" class="gallery-image">
+                    <img src="img/C263945D-DAEC-4F0D-92BB-EAF6C45A220C.PNG" alt="Projeto Premium" class="gallery-image">
                     <div class="gallery-label">
-                        <div class="gallery-title">Custom Editions</div>
+                        <div class="gallery-title">Projeto Premium</div>
                     </div>
                 </div>
                 <div class="gallery-item">
-                    <img src="https://picsum.photos/seed/117/800/800" alt="AI Marketing" class="gallery-image">
+                    <img src="img/68C04A46-1314-4CD6-A88F-2A978EE240C5.PNG" alt="Criação Exclusiva" class="gallery-image">
                     <div class="gallery-label">
-                        <div class="gallery-title">AI Marketing</div>
+                        <div class="gallery-title">Criação Exclusiva</div>
                     </div>
                 </div>
                 <div class="gallery-item">
-                    <img src="https://picsum.photos/seed/118/800/800" alt="Tech Innovation" class="gallery-image">
+                    <img src="img/b2b53c50-99a6-4847-b830-575ade29edfb.PNG" alt="Arte Visual" class="gallery-image">
                     <div class="gallery-label">
-                        <div class="gallery-title">Tech Innovation</div>
+                        <div class="gallery-title">Arte Visual</div>
                     </div>
                 </div>
-        </div>
-    </section>
-
-    <section id="sobre" class="about">
-        <div class="container">
-            <div class="about-content">
-                <div>
-                    <h2 class="section-title">Sobre</h2>
-                    <p class="section-subtitle">Profissional criativa</p>
-                    <div class="about-text">
-                        <p>Artista gráfica com foco em criações autorais e inovadoras que transformam marcas em experiências visuais memoráveis.</p>
-                        <p>Cada projeto é uma oportunidade de explorar novas formas de comunicação visual, mantendo a sofisticação e a estratégia como pilares fundamentais do trabalho.</p>
+                <div class="gallery-item">
+                    <img src="img/79d095f8-616d-49d7-b65d-cc1f18a29cc9.PNG" alt="Design Inovador" class="gallery-image">
+                    <div class="gallery-label">
+                        <div class="gallery-title">Design Inovador</div>
                     </div>
                 </div>
-                <div>
-                    <h3 class="section-title" style="margin-bottom: 1rem;">Serviços</h3>
-                    <div class="services">
-                        <div class="service">
-                            <div class="service-title">Design Gráfico</div>
-                            <p>Criações autorais e projetos visuais sofisticados</p>
-                        </div>
-                        <div class="service">
-                            <div class="service-title">Identidade Visual</div>
-                            <p>Marcas coesas com personalidade própria</p>
-                        </div>
-                        <div class="service">
-                            <div class="service-title">Direção de Arte</div>
-                            <p>Conceitos visuais estratégicos e criativos</p>
-                        </div>
-                        <div class="service">
-                            <div class="service-title">Design Digital</div>
-                            <p>Experiências imersivas para web e aplicativos</p>
-                        </div>
+                <div class="gallery-item">
+                    <img src="img/bee6018d-8c8f-4474-bf8e-9663c8b05217.PNG" alt="Composição Moderna" class="gallery-image">
+                    <div class="gallery-label">
+                        <div class="gallery-title">Composição Moderna</div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="img/8ae61bd2-c1fd-4fc3-8dbf-7ebc7dfe886c.PNG" alt="Trabalho Premium" class="gallery-image">
+                    <div class="gallery-label">
+                        <div class="gallery-title">Trabalho Premium</div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="img/5aba3c77-b49e-463c-a5cb-ff43bb6a9a1c.PNG" alt="Design Sofisticado" class="gallery-image">
+                    <div class="gallery-label">
+                        <div class="gallery-title">Design Sofisticado</div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="contato" class="section">
-        <div class="container">
-            <footer>
-                <div class="footer-content">
-                    <h3 class="footer-title">Vamos Colaborar</h3>
-                    <div class="contact">
-                        <p>Pronta para transformar sua visão em uma obra visual extraordinária.</p>
-                        <p style="margin-top: 1.5rem;"><strong>Júlia Assis</strong><br>Artista Gráfica e Designer<br>Araxá, MG</p>
+    <section id="sobre" class="about">
+        <div class="about-content">
+            <div class="about-text">
+                <h2 class="section-title">Sobre</h2>
+                <p>Sou uma designer visual apaixonada por criar experiências visuais que não apenas impressionam, mas também vendem. Cada projeto é uma oportunidade de contar uma história através de cores, tipografia e composição refinada.</p>
+                <p>Meu trabalho combina sofisticação, inovação e execução impecável para entregar designs que elevam sua marca e geram resultados reais.</p>
+            </div>
+            <div>
+                <div class="services">
+                    <div class="service">
+                        <div class="service-title">Design Personalizado</div>
+                        <p>Criações únicas e exclusivas adaptadas ao seu negócio e público-alvo com máxima qualidade.</p>
                     </div>
-                    <a href="https://wa.me/5534988086470?text=Olá%20Júlia,%20adorei%20seu%20trabalho!" class="whatsapp-btn">Enviar Mensagem</a>
-                    <div class="footer-bottom">
-                        <p>© 2024 Júlia Assis. Todos os direitos reservados.</p>
+                    <div class="service">
+                        <div class="service-title">Identidade Visual</div>
+                        <p>Desenvolvimento completo de marca, logotipo e direcionamento visual profissional.</p>
+                    </div>
+                    <div class="service">
+                        <div class="service-title">Conteúdo Visual</div>
+                        <p>Produção de materiais visuais em alta resolução para redes sociais e marketing.</p>
+                    </div>
+                    <div class="service">
+                        <div class="service-title">Edições Premium</div>
+                        <p>Edições fotográficas profissionais e retoque de alta qualidade com precisão.</p>
                     </div>
                 </div>
-            </footer>
+            </div>
         </div>
     </section>
 
-    <script>
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth' });
-                }
-            });
-        });
-    </script>
+    <footer id="contato">
+        <div class="footer-content">
+            <h2 class="footer-title">Vamos Criar Algo Incrível Juntos</h2>
+            <div class="contact">
+                <p><strong>Email:</strong> julia@assis.com</p>
+                <p><strong>Telefone:</strong> (11) 99999-9999</p>
+                <p><strong>Localização:</strong> São Paulo, SP</p>
+            </div>
+            <a href="https://wa.me/5511999999999" class="whatsapp-btn">Fale Conosco no WhatsApp</a>
+            <div class="footer-bottom">
+                © 2024 Júlia Assis. Todos os direitos reservados. | Design Premium
+            </div>
+        </div>
+    </footer>
 </body>
+</html>
